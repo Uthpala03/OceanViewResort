@@ -29,7 +29,6 @@
             <div class="alert bad"><%= error %></div>
         <% } %>
 
-        <!-- Search box -->
         <form action="<%=request.getContextPath()%>/view-reservation" method="get"
               style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
 
@@ -50,7 +49,6 @@
 
     <div style="height:14px;"></div>
 
-    <!-- If searched and found one -->
     <% if (one != null) { %>
         <div class="card">
             <h2 style="margin:0 0 10px;">
@@ -87,7 +85,6 @@
         <div style="height:14px;"></div>
     <% } %>
 
-    <!-- All reservations table -->
     <div class="card">
         <h2 style="margin:0 0 10px;">
             <i class="fa-solid fa-table"></i> All Reservations

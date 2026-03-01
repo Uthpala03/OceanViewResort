@@ -7,12 +7,10 @@
 
   <display-name>Ocean View Resort</display-name>
 
-  <!-- ✅ Default page when opening only /OceanViewResort/ -->
   <welcome-file-list>
     <welcome-file>login</welcome-file>
   </welcome-file-list>
 
-  <!-- ✅ Optional: session timeout (minutes) -->
   <session-config>
     <session-timeout>15</session-timeout>
   </session-config>

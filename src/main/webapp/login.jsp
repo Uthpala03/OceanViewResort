@@ -7,14 +7,9 @@
 <head>
     <title>Login - Ocean View Resort</title>
 
-    <!-- Main CSS (same as dashboard) -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-    <!-- ✅ Same font style feeling -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -148,10 +143,8 @@
 
 <div class="login-page">
 
-    <!-- LEFT: Image panel -->
     <div class="login-left">
 
-        <!-- ✅ UPDATED BRAND (same as dashboard logo + text) -->
         <div class="left-brand">
             <img src="<%=request.getContextPath()%>/assets/img/logo.png"
                  class="login-brand-img"
@@ -165,7 +158,6 @@
 
     </div>
 
-    <!-- RIGHT: Login form -->
     <div class="login-right">
         <div class="card login-card">
 

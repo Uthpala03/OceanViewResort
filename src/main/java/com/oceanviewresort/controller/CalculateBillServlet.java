@@ -12,7 +12,7 @@ import java.time.temporal.ChronoUnit;
 @WebServlet("/calculate-bill")
 public class CalculateBillServlet extends HttpServlet {
 
-    private static final double SERVICE_CHARGE_RATE = 0.10; // ✅ 10%
+    private static final double SERVICE_CHARGE_RATE = 0.10;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -25,7 +25,7 @@ public class CalculateBillServlet extends HttpServlet {
         }
 
         String reservationNoStr = req.getParameter("reservationNo");
-        String action = req.getParameter("action"); // calc OR pay
+        String action = req.getParameter("action");
 
         if (reservationNoStr == null || reservationNoStr.trim().isEmpty()) {
             req.getRequestDispatcher("calculateBill.jsp").forward(req, resp);
@@ -93,23 +93,21 @@ public class CalculateBillServlet extends HttpServlet {
                     default:       pricePerNight = 5000;  // SINGLE
                 }
 
-                // ✅ Room total
+                // Room total
                 double roomTotal = nights * pricePerNight;
 
-                // ✅ Service charge 10%
+                // Service charge 10%
                 double serviceCharge = roomTotal * SERVICE_CHARGE_RATE;
 
-                // ✅ Grand total (this is what we save)
+                // Grand total
                 double grandTotal = roomTotal + serviceCharge;
 
-                // send to JSP always
                 req.setAttribute("reservationNo", reservationNo);
                 req.setAttribute("guest_name", guestName);
                 req.setAttribute("room_type", roomType);
                 req.setAttribute("nights", nights);
                 req.setAttribute("price", pricePerNight);
 
-                // ✅ send all totals
                 req.setAttribute("total", roomTotal);
                 req.setAttribute("serviceCharge", serviceCharge);
                 req.setAttribute("grandTotal", grandTotal);
@@ -128,15 +126,13 @@ public class CalculateBillServlet extends HttpServlet {
                         return;
                     }
 
-                    // ✅ insert payment using GRAND TOTAL
                     try (PreparedStatement ps2 = con.prepareStatement(insertPaymentSql)) {
                         ps2.setInt(1, reservationNo);
                         ps2.setInt(2, nights);
-                        ps2.setDouble(3, grandTotal); // ✅ changed from roomTotal
+                        ps2.setDouble(3, grandTotal);
                         ps2.executeUpdate();
                     }
 
-                    // update status
                     try (PreparedStatement ps3 = con.prepareStatement(updateStatusSql)) {
                         ps3.setInt(1, reservationNo);
                         ps3.executeUpdate();

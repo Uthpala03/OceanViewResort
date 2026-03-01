@@ -27,7 +27,6 @@
             <div class="alert ok"><%= message %></div>
         <% } %>
 
-        <!-- Search form -->
         <form action="<%=request.getContextPath()%>/update-reservation" method="get"
               style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
 

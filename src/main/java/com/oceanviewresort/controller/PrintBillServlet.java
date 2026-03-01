@@ -12,7 +12,7 @@ import java.time.temporal.ChronoUnit;
 @WebServlet("/print-bill")
 public class PrintBillServlet extends HttpServlet {
 
-    private static final double SERVICE_CHARGE_RATE = 0.10; // ✅ 10%
+    private static final double SERVICE_CHARGE_RATE = 0.10;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -87,7 +87,6 @@ public class PrintBillServlet extends HttpServlet {
                 req.setAttribute("nights", nightsLong);
                 req.setAttribute("price", price);
 
-                // ✅ send totals
                 req.setAttribute("total", roomTotal);
                 req.setAttribute("serviceCharge", serviceCharge);
                 req.setAttribute("grandTotal", grandTotal);

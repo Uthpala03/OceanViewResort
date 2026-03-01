@@ -45,7 +45,6 @@ public class DeleteReservationServlet extends HttpServlet {
 
         try (Connection con = DBConnectionManager.getInstance().getConnection()) {
 
-            // 1) Reservation must exist
             String status;
             try (PreparedStatement ps0 = con.prepareStatement(checkReservationSql)) {
                 ps0.setInt(1, reservationNo);
@@ -71,7 +70,7 @@ public class DeleteReservationServlet extends HttpServlet {
                 return;
             }
 
-            // 2) Block cancel if payments exist
+            // Block cancel if payments exist
             try (PreparedStatement psCheck = con.prepareStatement(checkPaymentsSql)) {
                 psCheck.setInt(1, reservationNo);
 
@@ -86,7 +85,6 @@ public class DeleteReservationServlet extends HttpServlet {
                 }
             }
 
-            // 3) Cancel (soft delete)
             try (PreparedStatement psCancel = con.prepareStatement(cancelReservationSql)) {
                 psCancel.setInt(1, reservationNo);
                 int rows = psCancel.executeUpdate();

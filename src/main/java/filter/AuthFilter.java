@@ -15,16 +15,13 @@ public class AuthFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        String uri = req.getRequestURI(); // like /OceanViewResort/dashboard.jsp
+        String uri = req.getRequestURI();
 
-        // ✅ Allow login page without session
         if (uri.endsWith("login.jsp")) {
             chain.doFilter(request, response);
             return;
         }
 
-        // ✅ Optional: allow public pages (if you want)
-        // if (uri.endsWith("help.jsp")) { chain.doFilter(request, response); return; }
 
         HttpSession session = req.getSession(false);
         boolean loggedIn = (session != null && session.getAttribute("username") != null);

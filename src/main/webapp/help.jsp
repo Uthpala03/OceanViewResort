@@ -19,7 +19,6 @@
 
     <div style="height:14px;"></div>
 
-    <!-- ✅ Quick tips card -->
     <div class="card">
         <h2 style="margin:0 0 10px;">
             <i class="fa-solid fa-lightbulb"></i> Quick Tips
@@ -35,7 +34,6 @@
 
     <div style="height:14px;"></div>
 
-    <!-- ✅ Step-by-step cards -->
     <div class="card">
         <h2 style="margin:0 0 10px;">
             <i class="fa-solid fa-list-check"></i> Step-by-Step Guide
@@ -44,7 +42,6 @@
 
         <div style="height:12px;"></div>
 
-        <!-- simple grid using existing form-grid -->
         <div class="form-grid two">
 
             <div class="card" style="box-shadow:none;">
@@ -82,7 +79,6 @@
 
     <div style="height:14px;"></div>
 
-    <!-- ✅ Status meanings (creative + clear) -->
     <div class="card">
         <h2 style="margin:0 0 10px;">
             <i class="fa-solid fa-tags"></i> Reservation Status Meanings
@@ -103,7 +99,6 @@
 
     <div style="height:14px;"></div>
 
-    <!-- ✅ Safety / Exit -->
     <div class="card">
         <h2 style="margin:0 0 10px;">
             <i class="fa-solid fa-shield-halved"></i> Safe Exit

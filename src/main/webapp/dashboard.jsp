@@ -14,7 +14,6 @@
 
 <div class="container">
 
-    <!-- Top welcome card -->
     <div class="card">
         <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap;">
             <div>
@@ -34,7 +33,6 @@
 
     <div style="height:14px;"></div>
 
-    <!-- Quick Actions -->
     <div class="card">
         <h2 style="margin:0 0 6px;">
             <i class="fa-solid fa-bolt"></i> Quick Actions

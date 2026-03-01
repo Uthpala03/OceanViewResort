@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ReservationDAO {
 
-    // ✅ Check if reservation no already exists (ignore CANCELLED so number can be reused)
+    // Check if reservation number already exists
     public boolean reservationExists(int reservationNo) throws Exception {
         String sql = "SELECT reservation_no FROM reservations WHERE reservation_no = ? AND status <> 'CANCELLED'";
         try (Connection con = DBConnectionManager.getInstance().getConnection();
@@ -25,7 +25,6 @@ public class ReservationDAO {
         }
     }
 
-    // ✅ Insert reservation (status defaults to ACTIVE)
     public void insertReservation(int reservationNo, String guestName, String address,
                                   String contactNumber, String roomType,
                                   String checkIn, String checkOut) throws Exception {
@@ -43,7 +42,6 @@ public class ReservationDAO {
             ps.setString(4, contactNumber);
             ps.setString(5, roomType);
 
-            // ✅ real DATE values
             ps.setDate(6, Date.valueOf(checkIn));
             ps.setDate(7, Date.valueOf(checkOut));
 

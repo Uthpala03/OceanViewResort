@@ -84,7 +84,6 @@
             </tbody>
         </table>
 
-        <!-- ✅ GRAND TOTAL -->
         <div style="margin-top:18px; text-align:right; font-size:18px; font-weight:800;">
             Total Payments:
             <span style="color:#0ea5e9;">

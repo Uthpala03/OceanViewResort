@@ -5,16 +5,14 @@
     Object roomType = request.getAttribute("room_type");
     Object nights = request.getAttribute("nights");
     Object price = request.getAttribute("price");
-    Object total = request.getAttribute("total");  // room total
+    Object total = request.getAttribute("total");
     Object status = request.getAttribute("status");
 
     if (status == null) status = "ACTIVE";
 
-    // ✅ convert safely
     double roomTotal = (total == null) ? 0.0 : ((Number) total).doubleValue();
     double pricePerNight = (price == null) ? 0.0 : ((Number) price).doubleValue();
 
-    // ✅ Service charge 10%
     double serviceCharge = roomTotal * 0.10;
     double grandTotal = roomTotal + serviceCharge;
 %>

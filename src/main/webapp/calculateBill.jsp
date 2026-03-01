@@ -8,10 +8,9 @@
 
     Integer nights = (Integer) request.getAttribute("nights");
     Integer price = (Integer) request.getAttribute("price");
-    Double total = (Double) request.getAttribute("total");   // room total
+    Double total = (Double) request.getAttribute("total");
     String status = (String) request.getAttribute("status");
 
-    // ✅ Service charge 10%
     double serviceCharge = 0.0;
     double grandTotal = 0.0;
 
@@ -90,7 +89,6 @@
         </table>
 
         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <!-- ✅ Save Payment should store GRAND TOTAL -->
             <form action="<%=request.getContextPath()%>/calculate-bill" method="get" style="display:inline;">
                 <input type="hidden" name="reservationNo" value="<%= resNo %>">
                 <input type="hidden" name="action" value="pay">
