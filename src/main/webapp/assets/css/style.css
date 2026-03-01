@@ -1,0 +1,302 @@
+/* =====================================
+   Ocean View Resort - Final Professional UI
+   Clean • Elegant • Hotel Style
+   ===================================== */
+
+:root{
+  --bg: #f6f9fc;
+  --card: #ffffff;
+  --border: rgba(15,23,42,.08);
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --brand: #0ea5e9;
+  --brand2: #14b8a6;
+  --danger: #ef4444;
+
+  --radius: 20px;
+  --shadow-soft: 0 10px 30px rgba(15,23,42,.06);
+  --shadow-hover: 0 18px 40px rgba(14,165,233,.15);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1000px 400px at 0% 0%, rgba(14,165,233,.10), transparent 60%),
+    var(--bg);
+}
+
+/* Layout */
+.container{
+  width:min(1100px,92vw);
+  margin: 30px auto;
+}
+
+/* Cards */
+.card{
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Headings */
+h1{
+  font-size: 38px;
+  font-weight: 800;
+  margin:0 0 8px;
+}
+h2{
+  font-size: 22px;
+  font-weight: 800;
+  margin:0 0 10px;
+}
+small{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   Navbar
+   ========================= */
+.navbar{
+  position: sticky;
+  top:0;
+  z-index:100;
+  background:#ffffff;
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  width:min(1100px,92vw);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 8px 0;       /* less empty space */
+}
+
+/* ===== BRAND SECTION ===== */
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BIGGER LOGO */
+.brand-img{
+  height:75px;              /* 🔥 bigger logo */
+  width:auto;
+  object-fit:contain;
+}
+
+/* Resort Name */
+.brand-name{
+  font-size:22px;           /* 🔥 bigger text */
+  font-weight:800;
+  letter-spacing:0.5px;
+  background: linear-gradient(135deg,#0ea5e9,#14b8a6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  transition:.3s ease;
+}
+
+/* Hover Effect */
+.brand:hover .brand-name{
+  transform: translateX(3px);
+}
+/* Nav links */
+.nav{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:600;
+  color:#334155;
+  transition: .2s;
+}
+
+.nav a:hover{
+  background:#f1f5f9;
+}
+
+.nav a.active{
+  background: rgba(14,165,233,.15);
+  color:#0369a1;
+}
+
+/* Buttons */
+.btn{
+  padding:9px 16px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  cursor:pointer;
+  transition:.2s;
+  border:none;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,var(--brand),var(--brand2));
+  color:#fff;
+}
+.btn.primary:hover{
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Dashboard Tiles
+   ========================= */
+.tiles{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap:24px;
+  margin-top:24px;
+}
+
+.tile{
+  background:#ffffff;
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:26px;
+  text-decoration:none;
+  color:var(--text);
+  transition: all .25s ease;
+  box-shadow: 0 6px 18px rgba(15,23,42,.05);
+  position:relative;
+}
+
+.tile::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:5px;
+  border-radius:20px 0 0 20px;
+  background:linear-gradient(var(--brand),var(--brand2));
+}
+
+.tile:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.tile-title{
+  font-size:18px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:0 0 10px;
+}
+
+.tile-title i{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
+  background: rgba(14,165,233,.10);
+  color:#0284c7;
+  font-size:18px;
+}
+
+.tile-desc{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+  margin:0;
+}
+
+/* =========================
+   Forms
+   ========================= */
+input,select{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  margin-top:6px;
+}
+input:focus,select:focus{
+  outline:none;
+  border-color:var(--brand);
+  box-shadow:0 0 0 3px rgba(14,165,233,.15);
+}
+
+/* Tables */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+}
+.table th{
+  background:#f8fafc;
+  padding:12px;
+  text-align:left;
+}
+.table td{
+  padding:12px;
+  border-top:1px solid var(--border);
+}
+.table tr:hover td{
+  background:#f9fbff;
+}
+
+/* Alerts */
+.alert{
+  padding:12px;
+  border-radius:12px;
+  margin:12px 0;
+}
+.alert.ok{
+  background:rgba(20,184,166,.10);
+  border:1px solid rgba(20,184,166,.30);
+}
+.alert.bad{
+  background:rgba(239,68,68,.10);
+  border:1px solid rgba(239,68,68,.30);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  h1{font-size:28px;}
+  .tiles{grid-template-columns:1fr;}
+  .brand-name{display:none;}
+  .nav{justify-content:flex-end;}
+}
+
+/* ===== Footer ===== */
+.footer-custom{
+    text-align:center;
+    padding:20px 0;
+    color:#94a3b8;
+    font-size:13px;
+    border-top:1px solid rgba(15,23,42,.08);
+    margin-top:40px;
+}
+
+.footer-custom strong{
+    color:#0ea5e9;
+    font-weight:600;
+}
