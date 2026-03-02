@@ -45,7 +45,7 @@ public class AddReservationServlet extends HttpServlet {
         }
 
         if (!contactNumber.matches("\\d{10}")) {
-            forwardWithError(req, resp, "Contact Number must be 10 digits (ex: 0768056328)");
+            forwardWithError(req, resp, "Contact Number must be 10 digits (ex: 0734567890)");
             return;
         }
 

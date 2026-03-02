@@ -26,7 +26,11 @@
             <div class="alert ok"><%= success %></div>
         <% } %>
 
-        <form action="<%=request.getContextPath()%>/add-reservation" method="post" class="form-grid two" style="margin-top:14px;">
+        <form action="<%=request.getContextPath()%>/add-reservation"
+              method="post"
+              novalidate
+              class="form-grid two"
+              style="margin-top:14px;">
 
             <div>
                 <small>Reservation No</small>
@@ -72,7 +76,7 @@
             </div>
 
             <div style="grid-column:1/-1; display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
-                <button type="submit" class="btn primary">Save Reservation</button>
+                <button type="submit" class="btn primary" formnovalidate>Save Reservation</button>
                 <a href="dashboard.jsp" class="btn ghost">Back</a>
             </div>
 

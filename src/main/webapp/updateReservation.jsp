@@ -20,11 +20,11 @@
         <small>Search by reservation number to load details and update</small>
 
         <% if (error != null) { %>
-            <div class="alert bad"><%= error %></div>
+        <div class="alert bad"><%= error %></div>
         <% } %>
 
         <% if (message != null) { %>
-            <div class="alert ok"><%= message %></div>
+        <div class="alert ok"><%= message %></div>
         <% } %>
 
         <form action="<%=request.getContextPath()%>/update-reservation" method="get"
@@ -46,24 +46,31 @@
     <div class="card">
         <h2 style="margin:0 0 10px;">Edit Details</h2>
 
-        <form action="<%=request.getContextPath()%>/update-reservation" method="post" class="form-grid two">
+        <form action="<%=request.getContextPath()%>/update-reservation"
+              method="post"
+              class="form-grid two"
+              novalidate>
 
             <input type="hidden" name="reservationNo" value="<%= reservationNo %>">
 
             <div>
                 <small>Guest Name</small>
-                <input type="text" name="guestName" value="<%= request.getAttribute("guest_name") %>" required>
+                <input type="text" name="guestName"
+                       value="<%= request.getAttribute("guest_name") %>" required>
             </div>
 
             <div>
                 <small>Contact Number</small>
-                <input type="text" name="contact" value="<%= request.getAttribute("contact_number") %>"
-                       pattern="[0-9]{10}" title="Enter 10 digit number" required>
+                <input type="text" name="contact"
+                       value="<%= request.getAttribute("contact_number") %>"
+                       placeholder="e.g. 0734567890"
+                       required>
             </div>
 
             <div style="grid-column:1/-1;">
                 <small>Address</small>
-                <input type="text" name="address" value="<%= request.getAttribute("address") %>" required>
+                <input type="text" name="address"
+                       value="<%= request.getAttribute("address") %>" required>
             </div>
 
             <div>
@@ -83,16 +90,18 @@
 
             <div>
                 <small>Check-in Date</small>
-                <input type="date" name="checkIn" value="<%= request.getAttribute("check_in") %>" required>
+                <input type="date" name="checkIn"
+                       value="<%= request.getAttribute("check_in") %>" required>
             </div>
 
             <div>
                 <small>Check-out Date</small>
-                <input type="date" name="checkOut" value="<%= request.getAttribute("check_out") %>" required>
+                <input type="date" name="checkOut"
+                       value="<%= request.getAttribute("check_out") %>" required>
             </div>
 
             <div style="grid-column:1/-1; display:flex; gap:10px; flex-wrap:wrap;">
-                <button class="btn primary" type="submit">Update Reservation</button>
+                <button class="btn primary" type="submit" formnovalidate>Update Reservation</button>
                 <a class="btn ghost" href="dashboard.jsp">Back</a>
             </div>
         </form>
