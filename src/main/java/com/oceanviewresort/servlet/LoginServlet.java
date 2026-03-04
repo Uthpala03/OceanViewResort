@@ -1,4 +1,4 @@
-package com.oceanviewresort.controller;
+package com.oceanviewresort.servlet;
 
 import com.oceanviewresort.util.DBConnectionManager;
 
